@@ -22,7 +22,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex items-center gap-3">
-            <Logo className="w-11 h-11" viewBox="0 0 500 500" />
+            {/* scale */}
+            <Logo className="w-11 h-11 scale-105" viewBox="0 0 500 500" />
             <span className="text-2xl font-bold text-gray-900">Globasig</span>
           </a>
 

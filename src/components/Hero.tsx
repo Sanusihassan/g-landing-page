@@ -86,7 +86,7 @@ export default function Hero() {
               {/* Phone Image */}
               <div className="relative z-10 transform hover:scale-105 transition-transform duration-300">
                 <img
-                  src="/Adobe Express - file.svg"
+                  src="/phone-calling-interface.png"
                   alt="Globasig app showing international call interface"
                   className="w-full max-w-md drop-shadow-2xl"
                 />
