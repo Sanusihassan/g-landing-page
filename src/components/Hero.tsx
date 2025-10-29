@@ -1,78 +1,49 @@
-import NavBar from "./NavBar";
+import type { heroType } from "../content/content";
 
-// we need to add a langs dropdown at the end. buy number/buy credit, phone (a page with a phone call interface, we'll skipp the phone page for now.)
-export default function Hero() {
+export default function Hero({ content }: { content: heroType }) {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-linear-to-b from-gray-50 to-white">
       {/* Navigation */}
-      <NavBar />
+      {/* <NavBar /> */}
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
-              Make International Calls for Less
+              {content.title}
             </h1>
 
             <p className="text-xl text-gray-600 leading-relaxed">
-              Connect with anyone, anywhere. Crystal-clear calls at local rates.
+              {content.description}
             </p>
 
             <button className="bg-[#27ae60] hover:bg-[#229954] text-white font-semibold px-8 py-4 rounded-lg text-lg transition-all hover:shadow-lg hover:shadow-green-500/30 transform hover:-translate-y-0.5">
-              Start Calling Now
+              {content.buttonText}
             </button>
 
             {/* Trust Indicators */}
             <div className="flex items-center gap-6 pt-4">
-              <div className="flex items-center gap-2">
-                <svg
-                  className="w-5 h-5 text-[#27ae60]"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span className="text-sm text-gray-600 font-medium">
-                  No hidden fees
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <svg
-                  className="w-5 h-5 text-[#27ae60]"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span className="text-sm text-gray-600 font-medium">
-                  HD voice quality
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <svg
-                  className="w-5 h-5 text-[#27ae60]"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span className="text-sm text-gray-600 font-medium">
-                  24/7 support
-                </span>
-              </div>
+              {content.trustIndicators.map(
+                (indicator: string, index: number) => (
+                  <div key={index} className="flex items-center gap-2">
+                    <svg
+                      className="w-5 h-5 text-[#27ae60]"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <span className="text-sm text-gray-600 font-medium">
+                      {indicator}
+                    </span>
+                  </div>
+                )
+              )}
             </div>
           </div>
 
@@ -86,8 +57,8 @@ export default function Hero() {
               {/* Phone Image */}
               <div className="relative z-10 transform hover:scale-105 transition-transform duration-300">
                 <img
-                  src="/phone-calling-interface.png"
-                  alt="Globasig app showing international call interface"
+                  src={content.image.src}
+                  alt={content.image.alt}
                   className="w-full max-w-md drop-shadow-2xl"
                 />
               </div>

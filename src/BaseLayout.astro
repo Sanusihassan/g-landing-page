@@ -1,6 +1,6 @@
 ---
 const { pathname } = Astro.url;
-const { title, description, seoTitle, to } = Astro.props;
+const { headProps } = Astro.props;
 let lang = "en";
 let dir = "ltr";
 let locale;
@@ -38,41 +38,14 @@ if (pathname.startsWith("/ar")) {
   lang = "zh";
   locale = "zh_CN";
 }
-const seoConfig = {
-  title: seoTitle,
-  description: description,
-  canonical: `https://www.globasig.com/${to}`,
-  openGraph: {
-    url: `https://www.globasig.com/${to}`,
-    title: seoTitle,
-    description: description,
-    images: [
-      {
-        url: `https://www.globasig.com/images/${to}.png`,
-        width: 1200,
-        height: 630,
-        alt: title,
-        type: "image/png",
-      },
-    ],
-    site_name: "GlobaSig",
-    locale: locale || "en_US",
-  },
-  twitter: {
-    handle: "@globasig",
-    site: "@globasig",
-    cardType: "summary_large_image",
-  },
-};
-
-import { AstroSeo } from "@astrolib/seo";
+import AstroSeo from "./partials/AstroSeo.astro";
 import FaveIcons from "./partials/FaveIcons.astro";
 ---
 
 <!doctype html>
 <html lang={lang} dir={dir}>
   <head>
-    <AstroSeo {...seoConfig} />
+    <AstroSeo {...headProps} />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -90,9 +63,7 @@ import FaveIcons from "./partials/FaveIcons.astro";
   </head>
   <body>
     <main>
-      <!-- <Navbar client:load lang={lang} path={to} /> -->
       <slot />
-      <!-- <Footer client:load title={title} lang={lang} /> -->
     </main>
   </body>
 </html>

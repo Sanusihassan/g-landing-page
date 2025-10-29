@@ -1,5 +1,10 @@
 @import "tailwindcss";
-
 body {
   font-family: "Roboto", sans-serif;
+}
+
+.lg\:flex {
+  @media (width >= 64rem /* 1024px */) {
+    display: flex;
+  }
 }

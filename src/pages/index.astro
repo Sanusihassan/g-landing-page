@@ -1,9 +1,22 @@
 ---
 import BaseLayout from "../BaseLayout.astro";
 import Hero from "../components/Hero";
+import HowItWorks from "../components/HowItWorks";
+import WhyChooseUs from "../components/WhyChooseUs";
+import {
+  hero,
+  howItWorksContent,
+  seoConfig,
+  whyChooseUsContent,
+} from "../content/content";
 import "../styles/global.css";
+import "globasig-navbar/dist/assets/_page_.css";
+import Navbar from "globasig-navbar/src/components/NavBar";
 ---
 
-<BaseLayout>
-  <Hero client:load />
+<BaseLayout headProps={seoConfig}>
+  <Navbar client:load />
+  <Hero client:load content={hero} />
+  <WhyChooseUs client:load content={whyChooseUsContent} />
+  <HowItWorks client:load content={howItWorksContent} />
 </BaseLayout>
