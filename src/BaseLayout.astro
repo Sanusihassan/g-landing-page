@@ -1,6 +1,6 @@
 ---
 const { pathname } = Astro.url;
-const { headProps } = Astro.props;
+const { headProps, faqSchema, websiteSchema } = Astro.props;
 let lang = "en";
 let dir = "ltr";
 let locale;
@@ -38,14 +38,27 @@ if (pathname.startsWith("/ar")) {
   lang = "zh";
   locale = "zh_CN";
 }
+import type { faqType } from "./content/content";
 import AstroSeo from "./partials/AstroSeo.astro";
 import FaveIcons from "./partials/FaveIcons.astro";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: (faqSchema as faqType).questions.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
 ---
 
 <!doctype html>
 <html lang={lang} dir={dir}>
   <head>
-    <AstroSeo {...headProps} />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -59,6 +72,18 @@ import FaveIcons from "./partials/FaveIcons.astro";
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
     <link rel="icon" type="image/svg+xml" href="/images/icons/logo.svg" />
     <slot name="head" />
+    <AstroSeo {...headProps} />
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(schema)}
+    />
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(websiteSchema)}
+    />
+
     <FaveIcons />
   </head>
   <body>

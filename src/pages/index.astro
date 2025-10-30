@@ -1,22 +1,29 @@
 ---
 import BaseLayout from "../BaseLayout.astro";
+import FAQ from "../components/FAQ";
 import Hero from "../components/Hero";
 import HowItWorks from "../components/HowItWorks";
 import WhyChooseUs from "../components/WhyChooseUs";
 import {
+  faQ,
   hero,
   howItWorksContent,
   seoConfig,
+  websiteSchema,
   whyChooseUsContent,
 } from "../content/content";
 import "../styles/global.css";
 import "globasig-navbar/dist/assets/_page_.css";
 import Navbar from "globasig-navbar/src/components/NavBar";
+import "globasig-footer/dist/assets/index.css";
+import { Footer } from "globasig-footer/src/Footer";
 ---
 
-<BaseLayout headProps={seoConfig}>
+<BaseLayout headProps={seoConfig} faqSchema={faQ} websiteSchema={websiteSchema}>
   <Navbar client:load />
   <Hero client:load content={hero} />
   <WhyChooseUs client:load content={whyChooseUsContent} />
   <HowItWorks client:load content={howItWorksContent} />
+  <FAQ client:load content={faQ} />
+  <Footer client:load currentLang="en" title={seoConfig.title} />
 </BaseLayout>

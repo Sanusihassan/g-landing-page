@@ -64,8 +64,8 @@ export default function HowItWorks({ content }: { content: howItWorksType }) {
 
                 {/* Arrow - Hidden on mobile, shown on desktop between cards */}
                 {!isLastStep && (
-                  <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                    <ArrowRight className="w-8 h-8 text-[#27ae60]" />
+                  <div className="hidden md:block absolute top-1/2 -right-6 transform -translate-y-1/2 z-10">
+                    <ArrowRight className="w-12 h-8 text-[#27ae60]" />
                   </div>
                 )}
               </div>

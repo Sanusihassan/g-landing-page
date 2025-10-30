@@ -1,8 +1,9 @@
-// types
+// i want a "@type": "WebSite", schema object describing the website.
+// content.ts
 export type heroType = typeof hero;
 export type WhyChooseUsType = typeof whyChooseUsContent;
 export type howItWorksType = typeof howItWorksContent;
-// SEO Configuration for GlobaSig - Cheap International Phone Calls
+export type faqType = typeof faQ;
 export const seoConfig = {
   title: "Cheap International Calls Worldwide | GlobaSig",
   description:
@@ -29,6 +30,60 @@ export const seoConfig = {
     handle: "@globasig",
     site: "@globasig",
     cardType: "summary_large_image",
+  },
+};
+
+export const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "GlobaSig",
+  alternateName: "GlobaSig International Calling Service",
+  url: "https://www.globasig.com",
+  description:
+    "Make affordable international calls to any mobile or landline worldwide. Crystal clear quality, no contracts, low rates starting from $0.01 per minute.",
+  inLanguage: "en-US",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://www.globasig.com/search?q={search_term_string}",
+    },
+    "query-input": "required name=search_term_string",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "GlobaSig",
+    url: "https://www.globasig.com",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://www.globasig.com/images/icons/logo.svg",
+      width: 512,
+      height: 512,
+    },
+    sameAs: [
+      "https://twitter.com/globasig",
+      "https://www.facebook.com/globasig",
+      "https://www.linkedin.com/company/globasig",
+    ],
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "Customer Support",
+      email: "support@globasig.com",
+      availableLanguage: [
+        "English",
+        "Spanish",
+        "French",
+        "Arabic",
+        "Hindi",
+        "Chinese",
+      ],
+    },
+  },
+  offers: {
+    "@type": "AggregateOffer",
+    priceRange: "$0.01 - $0.50",
+    priceCurrency: "USD",
+    description: "International calling rates per minute",
   },
 };
 
@@ -120,4 +175,56 @@ export const howItWorksContent = {
     },
   ],
   ctaText: "Get Started Now",
+};
+
+export const faQ = {
+  heading: "Frequently Asked Questions",
+  contactCTA: {
+    text: "Still have questions? We're here to help!",
+    buttonText: "Contact Support",
+  },
+  subheading:
+    "Everything you need to know about making international calls with GlobaSig",
+  questions: [
+    {
+      question: "How do I make an international call?",
+      answer:
+        "Making an international call is simple: First, create your free account and add credits. Then, dial the country code followed by the phone number you want to reach. Our system automatically routes your call for the best quality and lowest rates. No special setup or apps needed on the recipient's end.",
+    },
+    {
+      question: "What are your international calling rates?",
+      answer:
+        "Our rates start as low as $0.01 per minute depending on the country you're calling. We offer pay-as-you-go pricing with no monthly fees, subscriptions, or hidden charges. You only pay for the minutes you actually use. Check our rates page for specific country pricing.",
+    },
+    {
+      question: "Do I need to download an app to make calls?",
+      answer:
+        "No app download required! You can make international calls directly from your web browser on any device. The person you're calling doesn't need to install anything either—they receive a regular phone call on their mobile or landline.",
+    },
+    {
+      question: "Can I call both mobile phones and landlines?",
+      answer:
+        "Yes! You can call any mobile phone or landline number worldwide in over 200 countries. Our service works with all phone types, and the person you're calling receives a regular phone call—no internet connection required on their end.",
+    },
+    {
+      question: "Is there a monthly subscription or contract?",
+      answer:
+        "No subscriptions, no contracts, no commitments. We offer simple pay-as-you-go pricing where you add credits to your account and only pay for the minutes you use. There are no monthly fees, activation charges, or cancellation penalties.",
+    },
+    {
+      question: "What is the call quality like?",
+      answer:
+        "We provide crystal clear HD voice quality for all international calls. Our advanced routing technology ensures the best possible connection with minimal latency. Calls are routed through secure, reliable networks for consistent high-quality audio.",
+    },
+    {
+      question: "How do I add credits to my account?",
+      answer:
+        "Adding credits is easy and secure. Simply log into your account and use any major credit card, debit card, or PayPal. Your credits are added instantly and never expire. You can add any amount you want—there's no minimum purchase required.",
+    },
+    {
+      question: "Are there any hidden fees or extra charges?",
+      answer:
+        "Absolutely not. We believe in transparent pricing with no hidden fees, no connection charges, and no surprise costs. The rate you see is the rate you pay. No contracts or monthly fees—just honest, affordable international calling.",
+    },
+  ],
 };
