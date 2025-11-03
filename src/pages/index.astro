@@ -13,10 +13,10 @@ import {
   whyChooseUsContent,
 } from "../content/content";
 import "../styles/global.css";
-import "globasig-navbar/dist/assets/_page_.css";
-import Navbar from "globasig-navbar/src/components/NavBar";
-import "globasig-footer/dist/assets/index.css";
-import { Footer } from "globasig-footer/src/Footer";
+import "globacheap-navbar/dist/assets/_page_.css";
+import Navbar from "globacheap-navbar/src/components/NavBar";
+import "globacheap-footer/dist/assets/index.css";
+import { Footer } from "globacheap-footer/src/Footer";
 ---
 
 <BaseLayout headProps={seoConfig} faqSchema={faQ} websiteSchema={websiteSchema}>
@@ -25,5 +25,5 @@ import { Footer } from "globasig-footer/src/Footer";
   <WhyChooseUs client:load content={whyChooseUsContent} />
   <HowItWorks client:load content={howItWorksContent} />
   <FAQ client:load content={faQ} />
-  <Footer client:load currentLang="en" title={seoConfig.title} />
+  <Footer client:load currentLang="en" title={seoConfig.footerTitle} />
 </BaseLayout>

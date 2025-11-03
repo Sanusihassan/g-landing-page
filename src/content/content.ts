@@ -1,44 +1,45 @@
-// i want a "@type": "WebSite", schema object describing the website.
 // content.ts
 export type heroType = typeof hero;
 export type WhyChooseUsType = typeof whyChooseUsContent;
 export type howItWorksType = typeof howItWorksContent;
 export type faqType = typeof faQ;
 export const seoConfig = {
-  title: "Cheap International Calls Worldwide | GlobaSig",
+  //
+  title: "Cheap International Calls Worldwide | GlobaCheap",
   description:
-    "Make affordable international calls with GlobaSig. Call friends and family on any landline or mobile phone worldwide with low rates. Sign up today at GlobaSig.com",
+    "Make affordable international calls with GlobaCheap. Call friends and family on any landline or mobile phone worldwide with low rates. Sign up today at GlobaCheap.com",
   openGraph: {
-    url: "https://www.globasig.com/",
-    title: "Cheap International Calls Worldwide | GlobaSig",
+    url: "https://www.globacheap.com/",
+    title: "Cheap International Calls Worldwide | GlobaCheap",
     description:
-      "Make affordable international calls with GlobaSig. Call friends and family on any landline or mobile phone worldwide with low rates. Sign up today at GlobaSig.com",
+      "Make affordable international calls with GlobaCheap. Call friends and family on any landline or mobile phone worldwide with low rates. Sign up today at GlobaCheap.com",
     images: [
       {
-        url: "https://www.globasig.com/images/globasig.png",
+        url: "https://www.globacheap.com/images/globacheap.png",
         width: 1200,
         height: 630,
-        alt: "GlobaSig - Cheap International Calls Worldwide",
+        alt: "GlobaCheap - Cheap International Calls Worldwide",
         type: "image/png",
       },
     ],
-    site_name: "GlobaSig",
+    site_name: "GlobaCheap",
     locale: "en_US",
     type: "website",
   },
   twitter: {
-    handle: "@globasig",
-    site: "@globasig",
+    handle: "@globacheap",
+    site: "@globacheap",
     cardType: "summary_large_image",
   },
+  footerTitle: "Reliable for easy and low-cost international calls",
 };
 
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "GlobaSig",
-  alternateName: "GlobaSig International Calling Service",
-  url: "https://www.globasig.com",
+  name: "GlobaCheap",
+  alternateName: "GlobaCheap International Calling Service",
+  url: "https://www.globacheap.com",
   description:
     "Make affordable international calls to any mobile or landline worldwide. Crystal clear quality, no contracts, low rates starting from $0.01 per minute.",
   inLanguage: "en-US",
@@ -46,29 +47,29 @@ export const websiteSchema = {
     "@type": "SearchAction",
     target: {
       "@type": "EntryPoint",
-      urlTemplate: "https://www.globasig.com/search?q={search_term_string}",
+      urlTemplate: "https://www.globacheap.com/search?q={search_term_string}",
     },
     "query-input": "required name=search_term_string",
   },
   publisher: {
     "@type": "Organization",
-    name: "GlobaSig",
-    url: "https://www.globasig.com",
+    name: "GlobaCheap",
+    url: "https://www.globacheap.com",
     logo: {
       "@type": "ImageObject",
-      url: "https://www.globasig.com/images/icons/logo.svg",
+      url: "https://www.globacheap.com/images/icons/logo.svg",
       width: 512,
       height: 512,
     },
     sameAs: [
-      "https://twitter.com/globasig",
-      "https://www.facebook.com/globasig",
-      "https://www.linkedin.com/company/globasig",
+      "https://twitter.com/globacheap",
+      "https://www.facebook.com/globacheap",
+      "https://www.linkedin.com/company/globacheap",
     ],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "Customer Support",
-      email: "support@globasig.com",
+      email: "support@globacheap.com",
       availableLanguage: [
         "English",
         "Spanish",
@@ -105,12 +106,12 @@ export const hero = {
   ],
   image: {
     src: "/phone-calling-interface.png",
-    alt: "GlobaSig international calling app showing phone interface",
+    alt: "GlobaCheap international calling app showing phone interface",
   },
 };
 
 export const whyChooseUsContent = {
-  heading: "Why Choose GlobaSig?",
+  heading: "Why Choose GlobaCheap?",
   subheading:
     "You shouldn't miss an opportunity to talk to your friends, family, colleagues or anyone else because it's too expensive!",
   features: [
@@ -184,7 +185,7 @@ export const faQ = {
     buttonText: "Contact Support",
   },
   subheading:
-    "Everything you need to know about making international calls with GlobaSig",
+    "Everything you need to know about making international calls with GlobaCheap",
   questions: [
     {
       question: "How do I make an international call?",
