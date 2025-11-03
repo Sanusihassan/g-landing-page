@@ -41,6 +41,7 @@ if (pathname.startsWith("/ar")) {
 import type { faqType } from "./content/content";
 import AstroSeo from "./partials/AstroSeo.astro";
 import FaveIcons from "./partials/FaveIcons.astro";
+import TawkTo from "./partials/TawkTo.astro";
 
 const schema = {
   "@context": "https://schema.org",
@@ -89,6 +90,7 @@ const schema = {
   <body>
     <main>
       <slot />
+      <TawkTo />
     </main>
   </body>
 </html>
