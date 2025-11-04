@@ -13,17 +13,16 @@ import {
   whyChooseUsContent,
 } from "../content/content";
 import "../styles/global.css";
-import "globacheap-navbar/dist/assets/_page_.css";
-import Navbar from "globacheap-navbar/src/components/NavBar";
-import "globacheap-footer/dist/assets/index.css";
-import { Footer } from "globacheap-footer/src/Footer";
 ---
 
-<BaseLayout headProps={seoConfig} faqSchema={faQ} websiteSchema={websiteSchema}>
-  <Navbar client:load />
+<BaseLayout
+  headProps={seoConfig}
+  faqSchema={faQ}
+  websiteSchema={websiteSchema}
+  lang="en"
+>
   <Hero client:load content={hero} />
   <WhyChooseUs client:load content={whyChooseUsContent} />
   <HowItWorks client:load content={howItWorksContent} />
   <FAQ client:load content={faQ} />
-  <Footer client:load currentLang="en" title={seoConfig.footerTitle} />
 </BaseLayout>

@@ -1,47 +1,42 @@
 ---
-const { pathname } = Astro.url;
-const { headProps, faqSchema, websiteSchema } = Astro.props;
-let lang = "en";
+export interface Props {
+  headProps: seoConfigType;
+  faqSchema: faqType;
+  websiteSchema: websiteSchemaType;
+  lang:
+    | "ar"
+    | "de"
+    | "fr"
+    | "id"
+    | "ru"
+    | "zh"
+    | "bn"
+    | "es"
+    | "hi"
+    | "pt"
+    | "en";
+}
+const { headProps, faqSchema, websiteSchema, lang } = Astro.props;
+// Determine language direction based on lang
 let dir = "ltr";
-let locale;
-
 switch (lang) {
   case "ar":
-    break;
-  case "es":
-    break;
-  case "fr":
-    break;
-  case "hi":
-    break;
-  case "zh":
+    dir = "rtl";
     break;
   default:
-    break;
+    dir = "ltr";
 }
 
-// Determine language and direction based on URL path
-if (pathname.startsWith("/ar")) {
-  lang = "ar";
-  dir = "rtl";
-  locale = "ar_AR";
-} else if (pathname.startsWith("/es")) {
-  lang = "es";
-  locale = "es_ES";
-} else if (pathname.startsWith("/fr")) {
-  lang = "fr";
-  locale = "fr_FR";
-} else if (pathname.startsWith("/hi")) {
-  lang = "hi";
-  locale = "hi_IN";
-} else if (pathname.startsWith("/zh")) {
-  lang = "zh";
-  locale = "zh_CN";
-}
-import type { faqType } from "./content/content";
+import Navbar from "globacheap-navbar/src/components/NavBar";
+import type {
+  faqType,
+  seoConfigType,
+  websiteSchemaType,
+} from "./content/content";
 import AstroSeo from "./partials/AstroSeo.astro";
 import FaveIcons from "./partials/FaveIcons.astro";
 import TawkTo from "./partials/TawkTo.astro";
+import { Footer } from "globacheap-footer/src/Footer";
 
 const schema = {
   "@context": "https://schema.org",
@@ -55,6 +50,8 @@ const schema = {
     },
   })),
 };
+import "globacheap-navbar/dist/assets/_page_.css";
+import "globacheap-footer/dist/assets/index.css";
 ---
 
 <!doctype html>
@@ -89,8 +86,10 @@ const schema = {
   </head>
   <body>
     <main>
+      <Navbar client:load lang={lang === "en" ? undefined : lang} />
       <slot />
-      <TawkTo />
     </main>
+    <Footer client:load currentLang={lang} title={headProps.footerTitle} />
+    <TawkTo />
   </body>
 </html>

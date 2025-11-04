@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../../BaseLayout.astro";
+import FAQ from "../../components/FAQ";
+import Hero from "../../components/Hero";
+import HowItWorks from "../../components/HowItWorks";
+import WhyChooseUs from "../../components/WhyChooseUs";
+import {
+  faQ,
+  hero,
+  howItWorksContent,
+  seoConfig,
+  websiteSchema,
+  whyChooseUsContent,
+} from "../../content/content-de";
+import "../../styles/global.css";
+---
+
+<BaseLayout
+  headProps={seoConfig}
+  faqSchema={faQ}
+  websiteSchema={websiteSchema}
+  lang="de"
+>
+  <Hero client:load content={hero} />
+  <WhyChooseUs client:load content={whyChooseUsContent} />
+  <HowItWorks client:load content={howItWorksContent} />
+  <FAQ client:load content={faQ} />
+</BaseLayout>

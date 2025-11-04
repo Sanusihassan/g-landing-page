@@ -1,10 +1,10 @@
-// content.ts
+export type seoConfigType = typeof seoConfig;
+export type websiteSchemaType = typeof websiteSchema;
 export type heroType = typeof hero;
 export type WhyChooseUsType = typeof whyChooseUsContent;
 export type howItWorksType = typeof howItWorksContent;
 export type faqType = typeof faQ;
 export const seoConfig = {
-  //
   title: "Cheap International Calls Worldwide | GlobaCheap",
   description:
     "Make affordable international calls with GlobaCheap. Call friends and family on any landline or mobile phone worldwide with low rates. Sign up today at GlobaCheap.com",
@@ -15,6 +15,7 @@ export const seoConfig = {
       "Make affordable international calls with GlobaCheap. Call friends and family on any landline or mobile phone worldwide with low rates. Sign up today at GlobaCheap.com",
     images: [
       {
+        // this should be globacheap-lang.png for each lang
         url: "https://www.globacheap.com/images/globacheap.png",
         width: 1200,
         height: 630,
@@ -33,7 +34,6 @@ export const seoConfig = {
   },
   footerTitle: "Reliable for easy and low-cost international calls",
 };
-
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -77,6 +77,11 @@ export const websiteSchema = {
         "Arabic",
         "Hindi",
         "Chinese",
+        "German",
+        "Indonesian",
+        "Russian",
+        "Bengali",
+        "Portuguese",
       ],
     },
   },
@@ -87,13 +92,6 @@ export const websiteSchema = {
     description: "International calling rates per minute",
   },
 };
-
-/**
- * about:
- * an online webapp that allows you to call anyone on their phone number i.e directly
- * without them having to have an account on the website i.e this is just a regular phone call.
- * this is a skype alternative you like.
- */
 export const hero = {
   title: "Make cheap international calls to any mobile or landline worldwide",
   description:
@@ -105,11 +103,10 @@ export const hero = {
     "Call any mobile or landline",
   ],
   image: {
-    src: "/phone-calling-interface.png",
+    src: "/images/phone-calling-interface.png",
     alt: "GlobaCheap international calling app showing phone interface",
   },
 };
-
 export const whyChooseUsContent = {
   heading: "Why Choose GlobaCheap?",
   subheading:
@@ -177,7 +174,6 @@ export const howItWorksContent = {
   ],
   ctaText: "Get Started Now",
 };
-
 export const faQ = {
   heading: "Frequently Asked Questions",
   contactCTA: {
