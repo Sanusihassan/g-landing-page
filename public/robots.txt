@@ -1,0 +1,13 @@
+# robots.txt for https://www.globacheap.com/
+
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Disallow: /sign-up/
+Disallow: /checkout/
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.globacheap.com/sitemap.xml
+
+Host: www.globacheap.com
