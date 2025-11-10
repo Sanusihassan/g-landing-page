@@ -17,12 +17,14 @@
     "astro": "^5.15.1",
     "globacheap-footer": "^0.0.4",
     "globacheap-navbar": "^0.0.5",
+    "js-cookie": "^3.0.5",
     "lucide-react": "^0.548.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "tailwindcss": "^4.1.16"
   },
   "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
     "@types/node": "^24.9.1"
   }
 }

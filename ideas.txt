@@ -1,3 +1,10 @@
 Sun Oct 26 06:29:50 PM +04 2025
 
 next add more stuff for seo & create footer.
+
+[TODO]: fix /lang/lang/ issue in the footer.
+[TODO]:
+Start Calling now btn =
+    if (user)
+        /phone
+    /signup?redirect=phone

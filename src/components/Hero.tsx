@@ -1,6 +1,21 @@
+import { useEffect, useState } from "react";
 import type { heroType } from "../content/content";
-
-export default function Hero({ content }: { content: heroType }) {
+import { type UserInfo } from "globacheap-navbar/src/store";
+import { getUserInfo } from "globacheap-navbar/src/getUserInfo";
+export default function Hero({
+  content,
+  lang,
+}: {
+  content: heroType;
+  lang: langType;
+}) {
+  const [user, setUser] = useState<UserInfo | null>(null);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const userInfo = getUserInfo<UserInfo>();
+      setUser(userInfo);
+    }
+  }, []);
   return (
     <div className="min-h-screen bg-linear-to-b from-gray-50 to-white">
       {/* Navigation */}
@@ -17,10 +32,16 @@ export default function Hero({ content }: { content: heroType }) {
             <p className="text-xl text-gray-600 leading-relaxed">
               {content.description}
             </p>
-
-            <button className="bg-[#27ae60] hover:bg-[#229954] text-white font-semibold px-8 py-4 rounded-lg text-lg transition-all hover:shadow-lg hover:shadow-green-500/30 transform hover:-translate-y-0.5">
+            <a
+              href={
+                user
+                  ? `${lang === "en" ? "" : lang}/phone`
+                  : `${lang === "en" ? "" : lang}/signup`
+              }
+              className="inline-block bg-[#27ae60] hover:bg-[#229954] text-white font-semibold px-8 py-4 rounded-lg text-lg transition-all hover:shadow-lg hover:shadow-green-500/30 transform hover:-translate-y-0.5"
+            >
               {content.buttonText}
-            </button>
+            </a>
 
             {/* Trust Indicators */}
             <div className="flex items-center gap-6 pt-4">

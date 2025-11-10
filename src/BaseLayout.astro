@@ -3,18 +3,7 @@ export interface Props {
   headProps: seoConfigType;
   faqSchema: faqType;
   websiteSchema: websiteSchemaType;
-  lang:
-    | "ar"
-    | "de"
-    | "fr"
-    | "id"
-    | "ru"
-    | "zh"
-    | "bn"
-    | "es"
-    | "hi"
-    | "pt"
-    | "en";
+  lang: langType;
 }
 const { headProps, faqSchema, websiteSchema, lang } = Astro.props;
 // Determine language direction based on lang
