@@ -42,7 +42,6 @@ const schema = {
 import "globacheap-navbar/dist/assets/_page_.css";
 import "globacheap-footer/dist/assets/index.css";
 import GTag from "./partials/GTag.astro";
-import InstallPrompt from "./partials/InstallPrompt.astro";
 ---
 
 <!doctype html>
@@ -73,7 +72,7 @@ import InstallPrompt from "./partials/InstallPrompt.astro";
     />
 
     <FaveIcons />
-    <InstallPrompt />
+    <script src="/registerSW.js" is:inline></script>
   </head>
   <body>
     <main>

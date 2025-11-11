@@ -15,7 +15,7 @@ export default defineConfig({
     mode: 'production',
     base: '/',
     scope: '/',
-    includeAssets: ['favicon.ico', 'robots.txt', 'sitemap-index.xml'],
+    includeAssets: ['robots.txt'],
     registerType: 'autoUpdate',
     workbox: {
       navigateFallback: '/index.html',
