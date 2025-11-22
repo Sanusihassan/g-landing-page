@@ -1,0 +1,7 @@
+[TODO]
+
+The meta description is too long: 1041 pixels from max. 1000 pixels.
+
+Improve the text of the meta description.
+
+Some anchor texts are used more than once
