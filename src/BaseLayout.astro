@@ -76,7 +76,7 @@ import GTag from "./partials/GTag.astro";
   </head>
   <body>
     <main>
-      <Navbar client:load lang={lang === "en" ? undefined : lang} />
+      <Navbar client:load lang={lang === "en" ? undefined : lang} path="" />
       <slot />
     </main>
     <Footer client:load currentLang={lang} title={headProps.footerTitle} />
