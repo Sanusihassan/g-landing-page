@@ -16,7 +16,7 @@
     "@types/react-dom": "^19.2.2",
     "astro": "^5.15.1",
     "globacheap-footer": "^0.0.6",
-    "globacheap-navbar": "^0.0.8",
+    "globacheap-navbar": "^0.0.9",
     "js-cookie": "^3.0.5",
     "lucide-react": "^0.548.0",
     "react": "^19.2.0",
