@@ -63,7 +63,7 @@ export default function Hero({
                       {indicator}
                     </span>
                   </div>
-                )
+                ),
               )}
             </div>
           </div>
