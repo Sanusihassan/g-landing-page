@@ -3,6 +3,8 @@
 User-agent: *
 Disallow: /admin/
 Disallow: /login/
+Disallow: /forgot-password/
+Disallow: /settings/
 Disallow: /sign-up/
 Disallow: /checkout/
 Allow: /
